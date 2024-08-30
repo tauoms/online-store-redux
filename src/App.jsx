@@ -3,6 +3,7 @@ import { useAppSelector } from "./hooks/hooks";
 
 function App() {
   const products = useAppSelector((state) => state.products.products);
+  // console.log("products", products);
 
   return (
     <>
@@ -12,10 +13,10 @@ function App() {
         Click me
       </Button>
       {products.map((product) => (
-        <>
-          <div key={product.id}>{product.id}</div>
-          <div key={product.id}>{product.description}</div>
-        </>
+        <div key={product.id}>
+          <div>{product.id}</div>
+          <div>{product.description}</div>
+        </div>
       ))}
     </>
   );
