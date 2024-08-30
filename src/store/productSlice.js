@@ -12,13 +12,21 @@ export const fetchProducts = createAsyncThunk("products/products", async () => {
 // Best practice: initialState comes before the reducer
 const initialState = {
     products: [],
+    cart: [],
 };
 
 export const productSlice = createSlice({
     name: "products",
     initialState,
     // Reducers are used for internal app state management (not from API or remote)
-    reducers: {},
+    reducers: {
+        addToCart: (state, action) => {
+            state.cart = [state.cart, action.payload];
+        },
+        clearCart: (state) => {
+            state.cart = [];
+        }
+    },
     // Extra reducers are used for Async calls
     extraReducers(builder) {
         builder
@@ -27,5 +35,8 @@ export const productSlice = createSlice({
         });
     },
 });
+
+// This is how we export from a reducer
+export const { addToCart, clearCart } = productSlice.actions;
 
 export default productSlice.reducer;

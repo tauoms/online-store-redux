@@ -18,7 +18,7 @@ const List = () => {
       <Container fluid>
         <Row className="align-content-md-center">
           {products.map((product) => (
-            <Col xs={6} sm={5} md={4} key={product.id}>
+            <Col xs={7} sm={5} md={4} lg={3} xl={2} key={product.id}>
               <Product key={product.id} product={product} />
             </Col>
           ))}
