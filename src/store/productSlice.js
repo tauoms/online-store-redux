@@ -21,7 +21,7 @@ export const productSlice = createSlice({
     // Reducers are used for internal app state management (not from API or remote)
     reducers: {
         addToCart: (state, action) => {
-            state.cart = [state.cart, action.payload];
+            state.cart = [...state.cart, action.payload];
         },
         clearCart: (state) => {
             state.cart = [];
