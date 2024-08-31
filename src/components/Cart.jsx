@@ -11,7 +11,7 @@ const Cart = () => {
   }, 0);
 
   return (
-    <Container>
+    <Container fluid className="p-5">
       <h1>Shopping Cart</h1>
       {cartItems.length === 0 ? (
         <p>Your cart is empty.</p>

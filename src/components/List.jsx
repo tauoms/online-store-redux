@@ -1,4 +1,4 @@
-import { Button, Col, Container, Row } from "react-bootstrap";
+import { Button, Col, Container, Row, Card } from "react-bootstrap";
 import { useAppDispatch, useAppSelector } from "../hooks/hooks";
 import { useEffect } from "react";
 import { addToCart, fetchProducts } from "../store/productSlice";
@@ -14,15 +14,28 @@ const List = () => {
 
   return (
     <div>
-      <h1>Products List</h1>
-      <Container fluid>
-        <Row className="align-content-md-center">
+      <Container fluid className="p-5">
+        <h1>Products List</h1>
+        <Row className="g-4">
+          {" "}
+          {/* g-4 adds spacing between cards */}
           {products.map((product) => (
-            <Col xs={7} sm={5} md={4} lg={3} xl={2} key={product.id}>
-              <Product key={product.id} product={product} />
-              <Button onClick={() => dispatch(addToCart(product))}>
-                Add to Cart
-              </Button>
+            <Col xs={12} sm={6} md={4} lg={3} xl={2} key={product.id}>
+              <Card className="h-100 d-flex flex-column">
+                <Card.Body>
+                  <Product product={product} />
+                </Card.Body>
+                <Card.Footer className="mt-auto text-center">
+                  {" "}
+                  {/* Pushes the footer to the bottom */}
+                  <Button
+                    variant="primary"
+                    onClick={() => dispatch(addToCart(product))}
+                  >
+                    Add to Cart
+                  </Button>
+                </Card.Footer>
+              </Card>
             </Col>
           ))}
         </Row>
