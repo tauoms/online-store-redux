@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import List from "./components/List";
 import Cart from "./components/Cart";
-import StoreNavbar from "./components/StoreNavBar";
+import StoreNavbar from "./components/StoreNavbar";
 
 const App = () => {
   return (
