@@ -17,8 +17,8 @@ const Cart = () => {
         <p>Your cart is empty.</p>
       ) : (
         <ul>
-          {cartItems.map((item) => (
-            <li key={item.id}>
+          {cartItems.map((item, index) => (
+            <li key={`${item.id}_${index}`}>
               {item.title} - {item.price} €
             </li>
           ))}
