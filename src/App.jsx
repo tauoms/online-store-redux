@@ -6,7 +6,7 @@ import StoreNavbar from "./components/StoreNavbar";
 const App = () => {
   return (
     <div>
-      <BrowserRouter>
+      <BrowserRouter basename="/online-store-redux">
         <StoreNavbar />
         <Routes>
           <Route path="/" element={<List />} />
