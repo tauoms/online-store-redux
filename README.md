@@ -1,10 +1,26 @@
-# React + Vite
+# Online Store
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A minimalistic webshop built with React, utilizing Redux for state management and fakestoreapi for product data.
 
-Currently, two official plugins are available:
+## Live Site
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[https://tauoms.github.io/online-store-redux/
+](https://tauoms.github.io/online-store-redux/)
 
-test edit
+## Screenshot
+
+![Screenshot 2024-11-06 at 20 51 57](https://github.com/user-attachments/assets/258a21a5-ed33-419e-b049-77941a762e5d)
+
+## Features
+
+- Product Listing: Fetches product data from fakestoreapi.
+- Add to Cart: Add items to the cart with automatic quantity updates.
+- Empty Cart: Clear all items from the cart at once.
+- State Management: Managed with Redux for efficient state handling.
+
+## Technologies
+
+- React
+- Redux
+- Bootstrap
+- fakestoreapi
