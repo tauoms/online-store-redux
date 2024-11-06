@@ -5,7 +5,17 @@ import { clearCart } from "../store/productSlice";
 const Cart = () => {
   const cartItems = useAppSelector((state) => state.products.cart);
   const dispatch = useAppDispatch();
-  console.log("cartItems", cartItems);
+
+  // Group items by ID and count quantities
+  const groupedItems = cartItems.reduce((acc, item) => {
+    if (!acc[item.id]) {
+      acc[item.id] = { ...item, quantity: 0 };
+    }
+    acc[item.id].quantity += 1;
+    return acc;
+  }, {});
+
+  // Calculate total cost
   const cartSum = cartItems.reduce((accumulator, current) => {
     return accumulator + current.price;
   }, 0);
@@ -17,9 +27,9 @@ const Cart = () => {
         <p>Your cart is empty.</p>
       ) : (
         <ul>
-          {cartItems.map((item, index) => (
-            <li key={`${item.id}_${index}`}>
-              {item.title} - {item.price} €
+          {Object.values(groupedItems).map((item) => (
+            <li key={item.id}>
+              {item.title} - {item.price} € x {item.quantity}
             </li>
           ))}
         </ul>
